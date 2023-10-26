@@ -1,0 +1,30 @@
+[package]
+name = "poem_article"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.72"
+dotenvy = "0.15.7"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1.32.0", features = ["macros", "rt-multi-thread"] }
+tokio-test = "0.4.3"
+uuid = { version = "1.4.1", features = ["v4"] }
+config = "0.13.3"
+sea-orm = { version = "0.12.2", features = [
+    "debug-print",
+    "sqlx-sqlite",
+    "runtime-async-std-native-tls",
+] }
+sea-orm-migration = { version = "0.12.2" }
+tera = "1.19.0"
+poem = { version = "1.3.57", features = [
+    "test",
+    "static-files",
+    "tokio-metrics",
+] }
+[dev-dependencies]
+mockall = "0.11.4"

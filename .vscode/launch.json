@@ -1,0 +1,102 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'poem_article'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=poem_article"
+                ],
+                "filter": {
+                    "name": "poem_article",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'poem_article'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=poem_article",
+                    "--package=poem_article"
+                ],
+                "filter": {
+                    "name": "poem_article",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'poem_article'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=poem_article",
+                    "--package=poem_article"
+                ],
+                "filter": {
+                    "name": "poem_article",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'prepare'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=prepare",
+                    "--package=poem_article"
+                ],
+                "filter": {
+                    "name": "prepare",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'article_test'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=article_test",
+                    "--package=poem_article"
+                ],
+                "filter": {
+                    "name": "article_test",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
