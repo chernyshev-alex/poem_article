@@ -2,13 +2,15 @@ use poem::listener::TcpListener;
 use poem::Server;
 use poem_article::repositories::DbRepository;
 use poem_article::services::{ArticleServiceSt, SocialMediaPublisher};
-use poem_article::{handlers, AppStateM};
+use poem_article::{handlers, AppConfig, AppStateM};
 use sea_orm::Database;
 use tera::Tera;
 
 use crate::handlers::*;
 use std::sync::Arc;
 mod migration;
+
+// TODO : open API
 
 #[tokio::main]
 async fn start() -> std::io::Result<()> {

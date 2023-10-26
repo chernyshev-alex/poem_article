@@ -17,13 +17,13 @@ pub struct AppStateM {
     pub templates: tera::Tera,
 }
 
-struct AppConfig {
-    host: String,
-    port: String,
-    db_url: String,
+pub struct AppConfig {
+    pub host: String,
+    pub port: String,
+    pub db_url: String,
 }
 impl AppConfig {
-    fn load() -> Result<AppConfig, std::io::Error> {
+    pub fn load() -> Result<AppConfig, std::io::Error> {
         dotenvy::dotenv().ok();
         Ok(AppConfig {
             host: env::var("HOST").unwrap_or("0.0.0.1".to_string()),
